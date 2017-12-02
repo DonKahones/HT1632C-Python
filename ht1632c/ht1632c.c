@@ -183,7 +183,8 @@ int ht1632c_init(const int num_panels, const int rot) {
 
 	// init display
 	ht1632c_sendcmd(HT1632_CS_ALL, HT1632_CMD_SYSDIS);
-	ht1632c_sendcmd(HT1632_CS_ALL, (CHIP_HEIGHT <= 8) ? HT1632_CMD_COMS00 : HT1632_CMD_COMS01);
+	//ht1632c_sendcmd(HT1632_CS_ALL, (CHIP_HEIGHT <= 8) ? HT1632_CMD_COMS00 : HT1632_CMD_COMS01);  //original command for new HT1632C
+	ht1632c_sendcmd(HT1632_CS_ALL, HT1632_CMD_COMS10);  //this option is for the older SURE0832 displays that use HT1632
 	ht1632c_sendcmd(HT1632_CS_ALL, HT1632_CMD_MSTMD);
 	ht1632c_sendcmd(HT1632_CS_ALL, HT1632_CMD_RCCLK);
 	ht1632c_sendcmd(HT1632_CS_ALL, HT1632_CMD_SYSON);
