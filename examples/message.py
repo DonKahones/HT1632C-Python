@@ -4,7 +4,7 @@ from ht1632cpy import HT1632C
 
 
 def scroll_message(msg, color, bg):
-    msg_length = len(msg) * interface.fontwidth(interface.font12x16)
+    msg_length = len(msg) * interface.fontwidth(interface.font6x8)
 
     start = interface.width()
     end = -msg_length - 1
